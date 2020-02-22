@@ -5,7 +5,7 @@ const resolvers = require("./resolvers");
 
 
 const server = new ApolloServer({
-    typeDefs,resolvers, dataSources: () => new PostApi()
+    typeDefs,resolvers, dataSources: () => ({PostApi : new PostApi()}) 
 });
 
 server.listen().then(({ url}) => {
